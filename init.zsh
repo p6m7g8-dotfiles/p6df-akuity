@@ -8,6 +8,7 @@
 ######################################################################
 p6df::modules::akuity::deps() {
   ModuleDeps=(
+    p6m7g8-dotfiles/p6df-argocd
   )
 }
 
@@ -54,9 +55,10 @@ p6df::modules::akuity::init() {
 p6df::modules::akuity::prompt::line() {
 
   local info="akuity:\t\t "
-  local id_org_role=$(
-    akuity organization list | tail -1 | sed -e 's,  *,/,g'
-  )
+  #  local id_org_role=$(
+  #    akuity organization list | tail -1 | sed -e 's,  *,/,g'
+  #  )
+  local id_org_role="akuity/pgollucci"
   info=$(p6_string_append "$info" "$id_org_role")
 
   p6_return_str "$info"
