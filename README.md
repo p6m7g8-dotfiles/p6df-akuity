@@ -45,9 +45,9 @@
 #### p6df-akuity/init.zsh:
 
 - p6df::modules::akuity::clones()
+- p6df::modules::akuity::deps()
 - p6df::modules::akuity::external::brew()
 - p6df::modules::akuity::init(dir)
-- p6df::modules::arkestro::deps()
 - str info = p6df::modules::akuity::prompt::line()
 
 

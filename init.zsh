@@ -2,7 +2,7 @@
 ######################################################################
 #<
 #
-# Function: p6df::modules::arkestro::deps()
+# Function: p6df::modules::akuity::deps()
 #
 #>
 ######################################################################
@@ -69,12 +69,12 @@ p6df::modules::akuity::prompt::line() {
 #
 # Function: p6df::modules::akuity::clones()
 #
-#  Environment:	 P6_DFZ_SRC_DIR
+#  Environment:	 P6_DFZ_SRC_FOCUSED_DIR
 #>
 ######################################################################
 p6df::modules::akuity::clones() {
 
-  p6_github_login_clone akuity "$P6_DFZ_SRC_DIR"
+  p6_github_login_clone akuity "$P6_DFZ_SRC_FOCUSED_DIR"
 
   p6_return_void
 }
