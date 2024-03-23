@@ -10,8 +10,7 @@
   - [Summary](#summary)
   - [Contributing](#contributing)
   - [Code of Conduct](#code-of-conduct)
-  - [Changes](#changes)
-    - [Usage](#usage)
+  - [Usage](#usage)
   - [Author](#author)
 
 ### Badges
@@ -34,11 +33,13 @@
 
 - [Code of Conduct](https://github.com/p6m7g8/.github/blob/master/CODE_OF_CONDUCT.md)
 
-## Changes
-
-- [Change Log](CHANGELOG.md)
-
 ## Usage
+
+
+### Aliases
+
+
+### Functions
 
 ### p6df-akuity:
 
@@ -47,8 +48,7 @@
 - p6df::modules::akuity::clones()
 - p6df::modules::akuity::deps()
 - p6df::modules::akuity::external::brew()
-- p6df::modules::akuity::init(dir)
-- str info = p6df::modules::akuity::prompt::line()
+- str str = p6df::modules::akuity::prompt::line()
 
 
 

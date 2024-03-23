@@ -21,7 +21,7 @@ p6df::modules::akuity::deps() {
 ######################################################################
 p6df::modules::akuity::external::brew() {
 
-  brew install akuity
+  p6df::modules::homebrew::cli::brew::install akuity
 
   p6_return_void
 }
@@ -29,39 +29,23 @@ p6df::modules::akuity::external::brew() {
 ######################################################################
 #<
 #
-# Function: p6df::modules::akuity::init(dir)
-#
-#  Args:
-#	dir -
-#
-#>
-######################################################################
-p6df::modules::akuity::init() {
-  local dir="$1"
-
-  p6_return_void
-}
-
-######################################################################
-#<
-#
-# Function: str info = p6df::modules::akuity::prompt::line()
+# Function: str str = p6df::modules::akuity::prompt::line()
 #
 #  Returns:
-#	str - info
+#	str - str
 #
 #>
 ######################################################################
 p6df::modules::akuity::prompt::line() {
 
-  local info="akuity:\t\t "
+  local str="akuity:\t\t "
   #  local id_org_role=$(
   #    akuity organization list | tail -1 | sed -e 's,  *,/,g'
   #  )
   local id_org_role="akuity/pgollucci"
-  info=$(p6_string_append "$info" "$id_org_role")
+  str=$(p6_string_append "$str" "$id_org_role")
 
-  p6_return_str "$info"
+  p6_return_str "$str"
 }
 
 ######################################################################
