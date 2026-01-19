@@ -29,21 +29,35 @@ p6df::modules::akuity::external::brew() {
 ######################################################################
 #<
 #
-# Function: str str = p6df::modules::akuity::prompt::line()
+# Function: str str = p6df::modules::akuity::prompt::mod()
 #
 #  Returns:
 #	str - str
 #
+#  Environment:	 HOME P6_AKUITY_ORG_ROLE_CACHE P6_DFZ_PROFILE_AKUITY
 #>
 ######################################################################
-p6df::modules::akuity::prompt::line() {
+p6df::modules::akuity::prompt::mod() {
 
-  local str="akuity:\t\t "
-  #  local id_org_role=$(
-  #    akuity organization list | tail -1 | sed -e 's,  *,/,g'
-  #  )
-  local id_org_role="akuity/pgollucci"
-  str=$(p6_string_append "$str" "$id_org_role")
+  local str
+
+  local id_org_role
+  if ! p6_string_blank "$P6_DFZ_PROFILE_AKUITY"; then
+    str="akuity:\t\t $P6_DFZ_PROFILE_AKUITY:"
+    if ! p6_string_blank "$P6_AKUITY_ORG_ROLE_CACHE"; then
+      str=$(p6_string_append "$str" "$P6_AKUITY_ORG_ROLE_CACHE" " ")
+    else
+      local mtime=$(p6_file_mtime "$HOME/.config/akuity/config.yaml")
+      local now=$(p6_date_point_now_epoch_seconds)
+      local diff=$(p6_math_sub "$now" "$mtime")
+
+      if p6_math_lt "$diff" "86400"; then
+        local org_name=$(akuity organization list | tail -1 | awk '{print $2}')
+        p6_env_export "P6_AKUITY_ORG_ROLE_CACHE" "$org_name"
+        str=$(p6_string_append "$str" "$P6_AKUITY_ORG_ROLE_CACHE" " ")
+      fi
+    fi
+  fi
 
   p6_return_str "$str"
 }
