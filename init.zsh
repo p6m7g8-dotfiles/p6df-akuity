@@ -52,7 +52,7 @@ p6df::modules::akuity::prompt::mod() {
       local diff=$(p6_math_sub "$now" "$mtime")
 
       if p6_math_lt "$diff" "86400"; then
-        local org_name=$(akuity organization list | tail -1 | awk '{print $2}')
+        local org_name=$(akuity organization list | p6_filter_row_last 1 | p6_filter_column_pluck 2)
         p6_env_export "P6_AKUITY_ORG_ROLE_CACHE" "$org_name"
         str=$(p6_string_append "$str" "$P6_AKUITY_ORG_ROLE_CACHE" " ")
       fi
