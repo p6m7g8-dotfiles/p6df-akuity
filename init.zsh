@@ -42,9 +42,9 @@ p6df::modules::akuity::prompt::mod() {
   local str
 
   local id_org_role
-  if ! p6_string_blank "$P6_DFZ_PROFILE_AKUITY"; then
+  if p6_string_blank_NOT "$P6_DFZ_PROFILE_AKUITY"; then
     str="akuity:\t\t $P6_DFZ_PROFILE_AKUITY:"
-    if ! p6_string_blank "$P6_AKUITY_ORG_ROLE_CACHE"; then
+    if p6_string_blank_NOT "$P6_AKUITY_ORG_ROLE_CACHE"; then
       str=$(p6_string_append "$str" "$P6_AKUITY_ORG_ROLE_CACHE" " ")
     else
       local mtime=$(p6_file_mtime "$HOME/.config/akuity/config.yaml")
