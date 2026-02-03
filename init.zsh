@@ -72,7 +72,7 @@ p6df::modules::akuity::prompt::mod() {
 ######################################################################
 p6df::modules::akuity::clones() {
 
-  p6_github_login_clone akuity "$P6_DFZ_SRC_FOCUSED_DIR"
+  p6_github_cli_parallel_clone akuity "$P6_DFZ_SRC_FOCUSED_DIR"
 
   p6_return_void
 }
