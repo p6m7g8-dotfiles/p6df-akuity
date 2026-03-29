@@ -15,11 +15,11 @@ p6df::modules::akuity::deps() {
 ######################################################################
 #<
 #
-# Function: p6df::modules::akuity::external::brew()
+# Function: p6df::modules::akuity::external::brews()
 #
 #>
 ######################################################################
-p6df::modules::akuity::external::brew() {
+p6df::modules::akuity::external::brews() {
 
   p6df::core::homebrew::cli::brew::install akuity
 
