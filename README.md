@@ -37,8 +37,8 @@ TODO: Add a short summary of this module.
 
 - `p6df::modules::akuity::clones()`
 - `p6df::modules::akuity::deps()`
-- `p6df::modules::akuity::external::brew()`
-- `str str = p6df::modules::akuity::prompt::mod()`
+- `p6df::modules::akuity::external::brews()`
+- `str str = p6df::modules::akuity::prompt::context()`
 
 ## Hierarchy
 
